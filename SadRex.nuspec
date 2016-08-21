@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>SadRex</id>
+    <version>1.0.1</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>Thraka</owners>
+    <licenseUrl>https://github.com/Thraka/SadRex/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/Thraka/SadRex</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Thraka/SadConsole/gh-pages/images/oD8yyro5.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>
+Initial NuGet release.
+    </releaseNotes>
+    <copyright>Copyright 2016 Steve De George JR</copyright>
+    <tags>roguelike rexpaint image</tags>
+  </metadata>
+</package>

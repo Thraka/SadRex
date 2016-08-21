@@ -34,6 +34,9 @@ namespace SadRex
         /// </summary>
         public int LayerCount { get { return layers.Count; } }
 
+        /// <summary>
+        /// A read-only collection of layers.
+        /// </summary>
         public System.Collections.ObjectModel.ReadOnlyCollection<Layer> Layers { get { return new System.Collections.ObjectModel.ReadOnlyCollection<Layer>(layers); } }
 
         /// <summary>
