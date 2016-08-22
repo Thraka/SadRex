@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>SadRex</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>Thraka</owners>
@@ -12,7 +12,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>
-Initial NuGet release.
+Was using row-major order for loading instead of column. Whoops.
     </releaseNotes>
     <copyright>Copyright 2016 Steve De George JR</copyright>
     <tags>roguelike rexpaint image</tags>
