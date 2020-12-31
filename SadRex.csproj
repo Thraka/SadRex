@@ -7,6 +7,7 @@
     <DocumentationFile>SadRex.xml</DocumentationFile>
     <AssemblyVersion>1.0.3.0</AssemblyVersion>
     <Version>1.0.3</Version>
+    <Version Condition="'$(Configuration)'=='Debug'">$(Version)-debug</Version>
     <Authors>Thraka</Authors>
     <Company>SadLogic</Company>
     <NeutralLanguage>en-US</NeutralLanguage>
