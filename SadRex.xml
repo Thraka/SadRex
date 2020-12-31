@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SadRex</name>
+    </assembly>
+    <members>
+        <member name="T:SadRex.Cell">
+            <summary>
+            A RexPaint layer cell.
+            </summary>
+        </member>
+        <member name="F:SadRex.Cell.Character">
+            <summary>
+            The character for the cell.
+            </summary>
+        </member>
+        <member name="F:SadRex.Cell.Foreground">
+            <summary>
+            The foreground color of the cell.
+            </summary>
+        </member>
+        <member name="F:SadRex.Cell.Background">
+            <summary>
+            The background color of the cell.
+            </summary>
+        </member>
+        <member name="M:SadRex.Cell.IsTransparent">
+            <summary>
+            Returns true when the current color is considered transparent.
+            </summary>
+            <returns>True when transparent.</returns>
+        </member>
+        <member name="T:SadRex.Color">
+            <summary>
+            A RexPaint color.
+            </summary>
+        </member>
+        <member name="F:SadRex.Color.R">
+            <summary>
+            The red channel of the color.
+            </summary>
+        </member>
+        <member name="F:SadRex.Color.G">
+            <summary>
+            The green channel of the color.
+            </summary>
+        </member>
+        <member name="F:SadRex.Color.B">
+            <summary>
+            The blue channel of the color.
+            </summary>
+        </member>
+        <member name="M:SadRex.Color.#ctor(System.Byte,System.Byte,System.Byte)">
+            <summary>
+            Creates a new RexPaint color with the specified RGB channels.
+            </summary>
+            <param name="r">The red channel of the color.</param>
+            <param name="g">The green channel of the color.</param>
+            <param name="b">The blue channel of the color.</param>
+        </member>
+        <member name="P:SadRex.Color.Transparent">
+            <summary>
+            Returns the transparent color used by RexPaint: rgb(255, 0, 255).
+            </summary>
+        </member>
+        <member name="T:SadRex.Image">
+            <summary>
+            A RexPaint image.
+            </summary>
+        </member>
+        <member name="P:SadRex.Image.Version">
+            <summary>
+            The version of RexPaint that created this image.
+            </summary>
+        </member>
+        <member name="P:SadRex.Image.Width">
+            <summary>
+            The width of the image.
+            </summary>
+        </member>
+        <member name="P:SadRex.Image.Height">
+            <summary>
+            The height of the image.
+            </summary>
+        </member>
+        <member name="P:SadRex.Image.LayerCount">
+            <summary>
+            The total number of layers for this image.
+            </summary>
+        </member>
+        <member name="P:SadRex.Image.Layers">
+            <summary>
+            A read-only collection of layers.
+            </summary>
+        </member>
+        <member name="M:SadRex.Image.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new RexPaint image.
+            </summary>
+            <param name="width">The width of the image.</param>
+            <param name="height">The height of the image.</param>
+        </member>
+        <member name="M:SadRex.Image.Create">
+            <summary>
+            Creates a new layer for the image adding it to the end of the layer stack.
+            </summary>
+            <returns>A new layer.</returns>
+        </member>
+        <member name="M:SadRex.Image.Create(System.Int32)">
+            <summary>
+            Creates a new layer for the image and inserts it at the specified position (0-based).
+            </summary>
+            <param name="index">The position to create the new layer at.</param>
+            <returns>A new layer.</returns>
+        </member>
+        <member name="M:SadRex.Image.Add(SadRex.Layer)">
+            <summary>
+            Adds an existing layer (must be the same width/height) to the image.
+            </summary>
+            <param name="layer">The layer to add.</param>
+        </member>
+        <member name="M:SadRex.Image.Add(SadRex.Layer,System.Int32)">
+            <summary>
+            Adds an existing layer (must be the same width/height) to the image and inserts it at the specified position (0-based).
+            </summary>
+            <param name="layer">The layer to add.</param>
+            <param name="index">The position to add the layer.</param>
+        </member>
+        <member name="M:SadRex.Image.Remove(SadRex.Layer)">
+            <summary>
+            Removes the specified layer.
+            </summary>
+            <param name="layer">The layer.</param>
+        </member>
+        <member name="M:SadRex.Image.Load(System.IO.Stream)">
+            <summary>
+            Loads a .xp RexPaint image from a GZip compressed stream.
+            </summary>
+            <param name="stream">The GZip stream to load.</param>
+            <returns>The RexPaint image.</returns>
+        </member>
+        <member name="T:SadRex.Layer">
+            <summary>
+            A layer of a RexPaint image.
+            </summary>
+        </member>
+        <member name="P:SadRex.Layer.Width">
+            <summary>
+            The width of the layer.
+            </summary>
+        </member>
+        <member name="P:SadRex.Layer.Height">
+            <summary>
+            The height of the layer.
+            </summary>
+        </member>
+        <member name="P:SadRex.Layer.Cells">
+            <summary>
+            Represents all cells of the layer.
+            </summary>
+        </member>
+        <member name="P:SadRex.Layer.Item(System.Int32,System.Int32)">
+            <summary>
+            Gets a cell by coordinates.
+            </summary>
+            <param name="x">The x (0-based) position of the cell.</param>
+            <param name="y">The y (0-based) position of the cell.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="P:SadRex.Layer.Item(System.Int32)">
+            <summary>
+            Gets a cell by index.
+            </summary>
+            <param name="index">The index of the cell.</param>
+            <returns>The cell.</returns>
+        </member>
+        <member name="M:SadRex.Layer.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Creates a new layer with the specified width and height.
+            </summary>
+            <param name="width">The width of the layer.</param>
+            <param name="height">The height of the layer.</param>
+        </member>
+    </members>
+</doc>
